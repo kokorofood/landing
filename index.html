@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Alimento tipo Barf para tu mascota en Guadalajara - Kokoro Barf</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+            integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@400;500;800&display=swap" rel="stylesheet">
+    <link href="assets/css/estilos.css" rel="stylesheet">
+    <link href="assets/plugins/fontawesome-5.13.0/css/all.css" rel="stylesheet">
+    <link href="assets/css/cover.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="masthead mb-auto text-center">
+            <div class="inner">
+                <h3 class="masthead-brand">
+                    <a href="index.html">
+		                <img alt="Kokoro Barf" src="assets/img/kokoro_barf_logo_bco-hor.png" height="80">
+		            </a>
+                </h3>
+                <nav class="nav nav-masthead justify-content-center mt-3">
+                    <!--<a class="nav-link active" href="index.html">Inicio</a>-->
+                    <a class="nav-link " href="cambio-croqueta-barf.html">De croquetas a crudo</a>
+                    <a class="nav-link" href="tabla-alimentacion.html">Tabla de alimentación</a>
+                    <a class="nav-link " href="https://wa.me/523314600233" target="_blank">+ Info</a>
+                </nav>
+            </div>
+        </header>
+        <div class="row pt-4">
+            <div class="col-md-5">
+                <div class="main-div">
+                    <div class="panel">
+                        <h2>Calculadora para perros</h2>
+                        <p>Cuanto alimento debo de darle a mi mascota</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="btn-group btn-group-justified" role="group">
+                                <a id="selAdulto" class="btn btn-success active" role="button" href="#">Perro Adulto</a>
+                                <a id="selCachorro" class="btn btn-success" role="button" href="#">Perro Cachorro</a>
+                                <!--<a id="selGato" class="btn btn-success" role="button" href="#">Gato</a>-->
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <form class="form-horizontal" id="formCachorro" name="formCachorro" method="post">
+                        <div id="tipoCachorro" style="display: none;">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <label class="control-label">Peso de tu Cachorro:</label>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <div class="input-group input-group-sm">
+                                                <input id="pesoCachorro" name="pesoCachorro" class="form-control" type="number" required="required" placeholder="Ejemplo: 0.5" step="any" min="0">
+                                                <div class="input-group-addon"><span>Kilogramos</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <label class="control-label">Meses de Vida:</label>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <select id="mesesCachorro" class="form-control input-sm" required="required">
+                                                <option value="" selected="">Seleccione una opción</option>
+                                                <option value="2">2 — 4 Meses</option>
+                                                <option value="4">4 — 6 Meses</option>
+                                                <option value="6">6 — 8 Meses</option>
+                                                <option value="8">8 — 10 Meses</option>
+                                                <option value="10">10 — 12 Meses</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <button id="calculoCachorro" class="btn btn-success bg-v2 btn-block btn-lg" style="cursor: pointer;color: white;" type="submit">Calcular Ración Diaria</button>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="alert alert-verde-1" role="alert" id="alertCachorro">
+                                        <h3 class="text-center"><strong>Ración diaria recomendada:</strong> <br>
+                                            <span id="resultadoCachorro">—</span></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- PERROS ADULTOS -->
+                    <form class="form-horizontal" id="formAdulto" name="formAdulto" method="post">
+                        <div id="tipoAdulto" >
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <label class="control-label">Peso de tu Perro:</label>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <div class="input-group input-group-sm">
+                                                <input class="form-control" type="number" name="pesoAdulto" id="pesoAdulto" placeholder="Ejemplo: 0.5" step="any" min="0" required="required">
+                                                <div class="input-group-addon"><span>Kilogramos</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <label class="control-label">Nivel de Actividad Física:</label>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <select class="form-control input-sm" name="ddlAdultoFisica" id="ddlAdultoFisica" required="required">
+                                                <option value="" selected="">Seleccione una opción</option>
+                                                <option value="2">Normal</option>
+                                                <option value="3">Activo</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <button id="calculoAdulto" class="btn btn-success bg-v2 btn-block btn-lg" type="submit">Calcular Ración Diaria<i class="glyphicon glyphicon-chevron-right"></i> </button>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="alert alert-verde-1" role="alert">
+                                        <h3 class="text-center"><strong>Ración diaria recomendada:</strong> <span id="resultadoAdulto">—</span></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- GATOS
+                    <form class="form-horizontal" id="formGato" name="formGato" method="post">
+                       <div id="tipoGato" style="display: none;">
+                          <div class="row">
+                             <div class="col-md-12">
+                                <div class="form-group">
+                                   <div class="col-sm-3">
+                                      <label class="control-label">Peso ideal de tu Mascota:</label>
+                                   </div>
+                                   <div class="col-sm-9">
+                                      <div class="input-group input-group-sm">
+                                         <input id="pesoGato" name="pesoGato" class="form-control" type="number" required="required" placeholder="Ejemplo: 0.5" step="any" min="0">
+                                         <div class="input-group-addon"><span>Kilogramos</span></div>
+                                      </div>
+                                   </div>
+                                </div>
+                             </div>
+                          </div>
+                          <div class="row">
+                             <div class="col-md-12">
+                                <div class="form-group">
+                                   <div class="col-sm-3">
+                                      <label class="control-label">Nivel de Actividad Física:</label>
+                                   </div>
+                                   <div class="col-sm-9">
+                                      <select id="actividadGato" class="form-control input-sm" required="required">
+                                         <option value="" selected="">Seleccione una opción</option>
+                                         <option value="indoor">Indoor</option>
+                                         <option value="outdoor">Outdoor</option>
+                                      </select>
+                                   </div>
+                                </div>
+                             </div>
+                             <div class="col-md-12">
+                                <button id="calculoGato" class="btn btn-success btn-block btn-lg" type="submit">Calcular Ración Diaria<i class="glyphicon glyphicon-chevron-right"></i> </button>
+                             </div>
+                          </div>
+                          <hr>
+                          <div class="row">
+                             <div class="col-md-12">
+                                <div class="alert alert-warning" role="alert" id="alertGato">
+                                   <h3 class="text-center"><strong>Ración diaria recomendada:</strong> <span id="resultadoGato">—</span></h3>
+                                </div>
+                             </div>
+                          </div>
+                       </div>
+                    </form>-->
+
+                    <div id="tipoAyuda" style="display: none;">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div id="infoCajaPerro" class="alert alert-warning" role="alert"><span>Nuestras cajas de alimento <strong>contienen 14 porciones de 250 grs aproximados</strong>, las cuales hacen un total de <strong>3,5 Kg</strong>. Te ayudamos a calcular la compra mensual para tu mascota. </span></div>
+                                <div id="infoCajaGato" class="alert alert-warning" role="alert" style="display: none;"><span>Nuestras cajas de alimento <strong>contienen 24 porciones de 150 grs aproximados</strong>, las cuales hacen un total de <strong>3,6 Kg</strong>. Te ayudamos a calcular la compra mensual para tu mascota. </span></div>
+                            </div>
+                            <div class="col-md-6"><span>Ración necesaria mensual:</span></div>
+                            <div class="col-md-6"><span id="resultadoCantidadMes"></span></div>
+                            <hr class="hidden-sm-up">
+                            <div class="col-md-6"><span>Cajas necesarias:</span></div>
+                            <div class="col-md-6"><span id="resultadoCajasMes"></span></div>
+                            <hr class="hidden-sm-up">
+                            <div class="col-md-6"><span>Una caja te alcanza para:</span></div>
+                            <div class="col-md-6"><span id="duracionCaja"></span></div>
+                            <hr class="hidden-sm-up">
+                            <div class="col-md-6"><span>Tu compra de cajas te alcanza para:</span></div>
+                            <div class="col-md-6"><span id="duracionTotal"></span></div>
+                            <hr class="hidden-sm-up">
+                            <div class="col-md-6"><span>Descuento por cantidad de cajas</span></div>
+                            <div class="col-md-6"><span id="descuento"></span> </div>
+                            <hr class="hidden-sm-up">
+                            <div class="col-md-6"><span>Costo final por cajas (descuento aplicado)</span></div>
+                            <div class="col-md-6"><span id="resultadoValorMes"></span> + costo despacho</div>
+                            <div class="col-md-12">
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <a target="_parent"><img class="img-responsive" style="margin:0 auto"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <main role="main" class="inner cover">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <h1 class="cover-heading">Dieta Cruda</h1>
+                        </div>
+                        <div class="col-sm-4"></div>
+                    </div>
+
+                    <div class="lead">
+                                La alimentación natural cruda o Dieta BARF es lo más apropiado para los perros por su naturaleza carnívora. De forma natural les aporta todos los nutrientes necesarios para estar sanos y fuertes. 100% Naturales - Sin conservantes - Sin aditivos
+                        <br><br>
+                        <h2>Beneficios</h2>
+                        <div style="font-size: 16px;">
+                                - Peso ideal <br>
+                                - Salud perfecta<br>
+                                - Digestiones ligeras <br>
+                                - Articulaciones fuertes <br>
+                                - Pelo brillante <br>
+                                - Salud bucal <br>
+                        </div>
+                        <br>
+                    </div>
+                    <br>
+                    <p class="lead">
+                        <a href="https://wa.me/523314600233" target="_blank" class="btn btn-lg btn-secondary"><i class="fab fa-whatsapp"></i> &nbsp; Hacer mi pedido </a>
+                    </p>
+                </main>
+            </div>
+        </div>
+        <footer class="mastfoot mt-auto text-center">
+            <div class="inner">
+                <p>Contacto <a href="https://wa.me/523314600233" target="_blank">Yizia</a>. Guadalajara, México</p>
+            </div>
+        </footer>
+    </div>
+    <script src="assets/js/scrpts.js"></script>
+</body>
+</html>
